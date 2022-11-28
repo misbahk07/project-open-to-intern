@@ -8,7 +8,7 @@ router.get("/test-me", function (req, res) {
     res.send("My first ever api!")
 })
 
-// ****************************** Post API to create a College ***************************************** 
+// ****************************** Post API to create a College *****************************************  
 router.post('/functionup/colleges',collegeController.createCollege)
 
 // ****************************** Post API to create an intern *****************************************

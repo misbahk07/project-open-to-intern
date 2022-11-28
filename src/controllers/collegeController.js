@@ -31,6 +31,7 @@ let createCollege = async function (req, res) {
 
 let getDetails = async function (req, res) {
     try {
+        res.setHeader('Access-Control-Allow-Origin','*')
         let data=req.query
          if(Object.keys(data).length==0)
          return res.status(400).send({status:false,msg:"please provide query parameter."})
@@ -41,7 +42,7 @@ let getDetails = async function (req, res) {
 
         let college=await collegeModel.findOne({name:collegeName,isDeleted:false})
         if(!college)
-        return res.status(404).send({status:false,msg:"No such college exists."})
+        return res.status(404).send({status:false,msg:"No such college exists."})   
 
         let collegeData={
             name:college.name,
