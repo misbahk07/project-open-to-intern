@@ -38,7 +38,7 @@ let getDetails = async function (req, res) {
 
         let collegeName = req.query.collegeName
         if (!collegeName)
-            return res.status(400).send({ status: false, msg: "please provide query parameter." })
+            return res.status(400).send({ status: false, msg: "please provide college name in query parameter." })
 
         let college=await collegeModel.findOne({name:collegeName,isDeleted:false})
         if(!college)
